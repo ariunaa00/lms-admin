@@ -1,0 +1,164 @@
+:root {
+    --primary-color: #1A237E;
+    --secondary-color: #E8EAF6;
+    --text-color: #222;
+    --background-color: #ffffff;
+    --hover-color: #283593
+}
+
+.btn {
+    width: 70px;
+    height: 30px;
+    border: none;
+    align-items: center;
+    color: var(--text-color);
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 8px;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary:hover {
+    background-color: var(--hover-color);
+    transform: scale(1.05);
+}
+
+.btn-secondary:hover {
+    background-color: white;
+    color: var(--text-color)
+}
+
+.toobar {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 50px;
+    padding: 8px 5px 8px 5px;
+    background-color: white;
+    color: var(--text-color)
+}
+
+#add-lesson-btn {
+    width: 80px;
+}
+
+.input {
+    height: 40px;
+    border: none;
+    background-color: #f2f2f2;
+    padding: 5px;
+    border-radius: 5px;
+}
+.card {
+    width: 200px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.card:hover {
+    background-color: #FAFAFA
+;
+}
+.card a {
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.card a:hover {
+    font-weight: bold;
+    color: var(--primary-color)
+}
+
+.modal-overlay {
+    background: rgba(0, 0, 0, 0.2);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+}
+
+.modal-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+    width: 400px;
+    height: 200px;
+    padding: 15px 15px;
+    background: ghostwhite;
+    border-radius: 5px;
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.modal-body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 10px;
+}
+
+.modal-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+}
+
+.open-modal-btn-wrapper {
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.close-modal-btn,
+.open-modal-btn {
+    padding: 8px;
+    cursor: pointer;
+    border: none;
+    background: ghostwhite
+}
+
+.close-btn-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+}
+
+.hide {
+    display: none;
+}
+
+h1 {
+    text-align: center;
+}
+

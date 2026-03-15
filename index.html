@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="components/footer.js"></script>
+    <script src="components/header.js"></script>
+    <script src="components/sidenav.js"></script>
+
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/lesson.css">
+
+</head>
+
+<body>
+    <app-header></app-header>
+
+    <main class="container" id="home-main">
+        <div class="toolbar">
+            <button class="btn btn-primary" id="add-lesson-btn">
+                Нэмэх
+            </button>
+        </div>
+
+        <div class="lesson-wrapper" id="lesson-wrapper">
+            <p>Хичээл байхгүй байна.</p>
+        </div>
+
+    </main>
+
+    <div class="modal-overlay hide" id="lesson-modal">
+
+        <div class="modal-wrapper lesson-modal-wrapper">
+            <span>Хичээл нэмэх</span>
+
+            <div class="modal-body">
+                <form class="add-lesson-form" id="lesson-form" enctype="multipart/form-data">
+                    <div class="lesson-form-input">
+                        <input type="number" id="lesson-id" style="display: none;"/>
+                        <input type="text" id="lesson-name-input" class="input" placeholder="Хичээлийн нэр">
+                        <div class="lesson-form-img-input">
+                            <img id="lesson-img-preview" src="" alt="Image Preview">
+                            <input type="file" id="lesson-image-input" accept="image/*">
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" id="lesson-save-cancel-btn" type="button">Болих</button>
+                        <button type="submit" class="btn btn-primary" id="lesson-save-btn">Хадгалах</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+    <app-sidenav></app-sidenav>
+    <app-footer></app-footer>
+    <script src="js/home.js"></script>
+    <script src="js/lesson.js"></script>
+
+
+</body>
+
+</html>

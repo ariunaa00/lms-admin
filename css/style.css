@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    /* Important: body must fill viewport */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    color: black
+}
+
+header {
+    background: #fff;
+    color: #121220;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 180px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
+}
+
+.header-user-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+    margin-left: 180px;
+    border: #eee
+}
+
+.container {
+    /* background: #fff; */
+    margin-bottom: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+
+.sidenav {
+    height: 100%;
+    width: 180px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    padding: 7px;
+    padding-top: 60px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    background: #fff;
+
+
+}
+
+.sidenav a {
+    padding: 10px 10px 10px 10px;
+    text-decoration: none;
+    font-size: 14px;
+    display: block;
+    transition: 0.3s;
+    color: #121220;
+    border-radius: 5px;
+
+    margin-left: 8px;
+}
+
+.nav-menu-div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 20px;
+
+}
+
+.nav-menu-div:hover {
+    color: #121220;
+    background-color: white;
+
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+}
+
+.small-icon {
+    width: 15px;
+    height: 15px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+    .sidenav a {
+        font-size: 18px;
+    }
+}
+

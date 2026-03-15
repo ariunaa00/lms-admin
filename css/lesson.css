@@ -1,0 +1,66 @@
+.lesson-wrapper {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+    /* grid-template-rows: repeat(auto-fit, minmax(120px, 1fr)); */
+    justify-content: start;
+    justify-items: start;
+    align-items: start;
+    gap: 15px;
+}
+
+.lesson-modal-wrapper {
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    height: 300px;
+}
+
+.add-lesson-form {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+}
+
+.add-lesson-form label {
+    font-size: 14px;
+}
+
+.add-lesson-form input {
+    margin-top: 10px;
+}
+
+.lesson-card {
+    height: 200px;
+    width: 180px;
+}
+
+.lesson-card img {
+    width: 100%;
+    border-radius: 10px;
+    height: 130px;
+}
+
+.lesson-form-input {
+    height: 150px
+    ;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.lesson-form-img-input {
+    display: flex;
+    margin-top: 20px;
+    flex-direction: row;
+
+} 
+
+#lesson-img-preview {
+    width: 80px;
+    height: 80px;
+    display: none;
+    margin-right: 10px;
+    border-radius: 5px;
+}
