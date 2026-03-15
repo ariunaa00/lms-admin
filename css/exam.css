@@ -1,0 +1,57 @@
+:root {
+    --primary-color: #1A237E;
+    --secondary-color: #E8EAF6;
+    --text-color: #222;
+    --background-color: #ffffff;
+    --hover-color: #283593
+}
+
+table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td,
+th {
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+tr:hover {
+    background-color: #ddd;
+}
+
+tr {
+    border-radius: 5px;
+}
+
+th {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: left;
+    background-color: #1A237E;
+    color: white;
+    font-size: medium;
+    font-weight: 300;
+}
+
+.container {
+    background-color: white;
+    border-radius: 5px;
+    margin: 10px;
+    margin-left: 190px;
+
+}
+
+
+.add-question-btn {
+    width: 100px;
+}

@@ -1,9 +1,13 @@
 
 const token = localStorage.getItem("token");
+let examsG = []
 
-const getExams = async () => {
+const getExams = async (lessonId) => {
     try {
-        const res = await fetch(`http://localhost:3000/api/v1/exam/`, {
+        if(!lessonId){
+            return null
+        }
+        const res = await fetch(`http://localhost:3000/api/v1/lesson/${lessonId}/exams`, {
             method: 'GET',
             headers: {
                 "Content-Type": "application/json",
@@ -11,9 +15,9 @@ const getExams = async () => {
             }
         })
 
-        const lessons = await res.json();
-        lessonsG = lessons
-        return lessons
+        const exams = await res.json();
+        examsG = exams
+        return exams
     } catch (err) {
         console.log(err);
         return []
@@ -21,18 +25,24 @@ const getExams = async () => {
 }
 
 const mountExams = async () => {
-    const lessons = await getExams();
-    const container = document.getElementById('exam-wrapper');
+    const params = new URLSearchParams(window.location.search);
+    const lessonId = params.get("lessonId");
 
-    container.innerHTML = lessons.map((lesson) => {
-        return `<div class="card lesson-card" data-id="${lesson.id}">
-                <image src="${imgLoadPredix}${lesson.imgUrl}" />
-                <span>${lesson.name}</span>
-                <a href="exams.html?lessonId=${lesson.id}"> Шалгалтын жагсаалт харах</a>
-          </div>`
+    const exams = await getExams(lessonId);
+    const container = document.getElementById('exams-table-body');
+
+    container.innerHTML = exams.map((exam) => {
+        return `
+            <tr>
+                <td><a href="questions.html?examId=${exam.id}">${exam.name}</a></td>
+                <td>${exam.lesson.name}</td>
+                <td>${exam.questionNum}</td>
+                <td>${exam.duration}</td>
+                <td>${exam.durationUnit}</td>
+                <td>0</td>
+            </tr>
+        `
     }).join("")
-
-    addListenersToCards();
 }
 
 

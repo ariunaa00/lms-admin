@@ -19,19 +19,20 @@
 <body>
     <app-header></app-header>
 
-    <main class="container" id="home-main">
+    <main class="container questions-container" id="quesions-main">
+        <div class="btn btn-primary add-question-btn">Асуулт нэмэх</div>
         <table>
             <thead>
                 <tr>
                     <th>Шалгалтын нэр</th>
-                    <th>Хичээлийн нэр</th>
-                    <th>Асуултын тоо</th>
-                    <th>Хугацаа</th>
-                    <th>Хугацаа (Нэгж) </th>
-                    <th>Шалгалт өгсөн тоо </th>
+                    <th>Асуулт</th>
+                    <th>Зураг</th>
+                    <th>Аудио</th>
+                    <th>Видео</th>
+                    <th>Хариултууд </th>
                 </tr>
             </thead>
-            <tbody id="exams-table-body">
+            <tbody id="questions-table-body">
 
             </tbody>
 
@@ -40,7 +41,7 @@
 
     <app-sidenav></app-sidenav>
     <app-footer></app-footer>
+    <script src="js/questions.js"></script>
     <script src="js/home.js"></script>
-    <script src="js/exam.js"></script>
 
 </body>
