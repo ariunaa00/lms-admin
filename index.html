@@ -34,12 +34,15 @@
     <div class="modal-overlay hide" id="lesson-modal">
 
         <div class="modal-wrapper lesson-modal-wrapper">
-            <span>Хичээл нэмэх</span>
+            <div class="modal-header">
+                <span>Хичээл нэмэх</span>
+                <image id="lesson-modal-close-btn" width="10px" height="10px" src="assets/images/close.png">
+            </div>
 
             <div class="modal-body">
                 <form class="add-lesson-form" id="lesson-form" enctype="multipart/form-data">
                     <div class="lesson-form-input">
-                        <input type="number" id="lesson-id" style="display: none;"/>
+                        <input type="number" id="lesson-id" style="display: none;" />
                         <input type="text" id="lesson-name-input" class="input" placeholder="Хичээлийн нэр">
                         <div class="lesson-form-img-input">
                             <img id="lesson-img-preview" src="" alt="Image Preview">

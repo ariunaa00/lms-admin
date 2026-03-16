@@ -1,20 +1,27 @@
 :root {
     --primary-color: #1A237E;
-    --secondary-color: #E8EAF6;
-    --text-color: #222;
-    --background-color: #ffffff;
-    --hover-color: #283593
+    --secondary-color: #3949AB;
+    --text-primary-color: #1F2937;
+    --text-secondary-color: #6B7280;
+    --background-color: #F5F6FA;
+    --accent-color: #5C6BC0;
+    --border-color: #E5E7EB;
+    --success-color: #16A34A;
+    --error-color: #DC2626;
+    --warning-color: #F59E0B;
 }
 
 table {
     font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     width: 100%;
+    font-size: 14px;
 }
 
 td,
 th {
     padding: 8px;
+    font-size: 14px;
 }
 
 tr:nth-child(even) {
@@ -52,6 +59,78 @@ th {
 }
 
 
-.add-question-btn {
-    width: 100px;
+.questions-table {
+    margin-top: 10px;
+}
+
+.question-modal-wrapper {
+    top: 50%;
+    width: 500px;
+    height: 700px;
+    font-size: 12px
+}
+
+
+.quetion-modal-close-btn {
+    cursor: pointer;
+}
+
+.quetion-modal-close-btn:hover {
+    transform: scale(1.05);
+}
+
+.question-form-input {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.question-form-input div {
+    margin-top: 10px;
+}
+
+
+.question-form-input label {
+    margin-top: 10px;
+}
+
+.question-form-input input {
+    margin-top: 10px;
+}
+
+.question-answers-list {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+.question-answers-list-div {
+    height: 30px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.answer-input {
+    width: 90%;
+}
+.question-remove-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    background-color: #FFCFCF;
+    border-radius: 5px;
+    cursor: pointer
+}
+
+
+.question-table-link-col {
+    font-weight: 500;
+    cursor: pointer;
+}
+.question-table-link-col:hover {
+    color: var(--accent-color)
 }

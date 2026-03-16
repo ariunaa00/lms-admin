@@ -1,5 +1,6 @@
 
 const token = localStorage.getItem("token");
+
 let examsG = []
 
 const getExams = async (lessonId) => {

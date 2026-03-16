@@ -4,6 +4,7 @@ const addLessonBtn = document.getElementById('add-lesson-btn')
 let lessonCards = document.querySelectorAll('.lesson-card')
 const lessonForm = document.getElementById('lesson-form')
 const lessonSaveCancelBtn = document.getElementById('lesson-save-cancel-btn')
+const lessonModalCloseBtn = document.getElementById('lesson-modal-close-btn')
 
 const idInput = document.getElementById('lesson-id');
 const imgInput = document.getElementById('lesson-image-input');
@@ -26,7 +27,7 @@ const getLessons = async () => {
             method: 'GET',
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": `Bearer ${token}` // <-- Bearer token here
+                "Authorization": `Bearer ${token}`
             }
         })
 
@@ -45,6 +46,7 @@ const saveLesson = async (event) => {
     const name = document.getElementById('lesson-name-input').value;
     const id = document.getElementById('lesson-id') ? document.getElementById('lesson-id').dataset.id : null
 
+    console.log(id);
     const file = imgInput.files[0];
 
     if (!file && !id) { //шинээр хичээл нэмэх үед
@@ -70,7 +72,7 @@ const saveLesson = async (event) => {
             "Authorization": `Bearer ${token}`
         }
     })
-        .then(response => response.json())
+        .then(res => res.json())
         .then(data => {
             closeEditModal();
             mountLessons();
@@ -85,8 +87,8 @@ const saveLesson = async (event) => {
 
 }
 
-const mountLessons = async () => {
-    const lessons = await getLessons();
+const mountLessons = async (_lessons) => {
+    const lessons = _lessons || await getLessons();
     const container = document.getElementById('lesson-wrapper');
 
     container.innerHTML = lessons.map((lesson) => {
@@ -149,10 +151,11 @@ const whenImgChange = (e) => {
     reader.readAsDataURL(file);
 }
 
-document.addEventListener("DOMContentLoaded", mountLessons);
+document.addEventListener("DOMContentLoaded", () => mountLessons());
 
 addLessonBtn.addEventListener('click', openEditModal);
 editModal.addEventListener("click", (e) => closeModal(e, true));
 imgInput.addEventListener('change', whenImgChange)
 lessonForm.addEventListener("submit", saveLesson)
 lessonSaveCancelBtn.addEventListener('click', closeEditModal)
+lessonModalCloseBtn.addEventListener('click', closeEditModal)

@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exam</title>
-    <link rel="stylesheet" href="css/style.css">
     <script src="components/footer.js"></script>
     <script src="components/header.js"></script>
     <script src="components/sidenav.js"></script>
 
     <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/exam.css">
 
 </head>
@@ -19,12 +19,14 @@
 <body>
     <app-header></app-header>
 
-    <main class="container questions-container" id="quesions-main">
-        <div class="btn btn-primary add-question-btn">Асуулт нэмэх</div>
-        <table>
+    <main class="container questions-container" id="questions-main">
+        <div class="toolbar">
+            <div class="btn btn-primary" id="add-question-btn">Асуулт нэмэх</div>
+        </div>
+        <table class="questions-table">
             <thead>
                 <tr>
-                    <th>Шалгалтын нэр</th>
+                    <th>Дугаар</th>
                     <th>Асуулт</th>
                     <th>Зураг</th>
                     <th>Аудио</th>
@@ -39,6 +41,53 @@
         </table>
     </main>
 
+    <div class="modal-overlay hide" id="question-modal">
+        <div class="modal-wrapper question-modal-wrapper">
+            <div class="modal-header">
+                <span>Асуулт нэмэх</span>
+                <image id="quetion-modal-close-btn" width="10px" height="10px" src="assets/images/close.png">
+            </div>
+            <div class="modal-body">
+                <form class="add-question-form" id="question-form" enctype="multipart/form-data">
+                    <input type="number" id="question-id-input-modal" style="display: none;"  />
+
+                    <div class="question-form-input">
+                        <label for="question">Асуулт</label>
+                        <input id="question-text-input" type="text" class="input input-small" placeholder="Асуулт" />
+
+                        <label for="question-image-input" accept="image/*">Зураг</label>
+                        <input type="file" id="question-image-input" />
+
+                        <label for="question-audio-input" accept="audio/*">Аудио</label>
+                        <input type="file" id="question-audio-input" />
+                        <audio id="audioPreview" controls></audio>
+
+                        <label for="question-video-input" accept="video/*">Бичлэг</label>
+                        <input type="file" id="question-video-input" />
+
+
+
+                        <div class="question-answers-list" id="question-answers-list">
+                            <label for="question">Хариултууд</label>
+
+                        </div>
+                    </div>
+
+                    <div class="flex-row" style="margin-top: 20px;">
+                        <button type="button" btn btn-secondary" id="add-answer-btn">
+                            <img src="assets/images/add.png" class="icon small-icon" alt="add more" />
+                            <span class="btn-text">Дахиад нэмэх</span>
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-gray btn-margin" id="question-cancel-btn">Болих</button>
+                <button class="btn btn-primary" id="question-save-btn">Хадгалах</button>
+            </div>
+        </div>
+    </div>
     <app-sidenav></app-sidenav>
     <app-footer></app-footer>
     <script src="js/questions.js"></script>

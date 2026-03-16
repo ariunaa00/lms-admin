@@ -1,42 +1,75 @@
 :root {
     --primary-color: #1A237E;
-    --secondary-color: #E8EAF6;
-    --text-color: #222;
-    --background-color: #ffffff;
-    --hover-color: #283593
+    --secondary-color: #3949AB;
+    --text-primary-color: #1F2937;
+    --text-secondary-color: #6B7280;
+    --background-color: #F5F6FA;
+    --accent-color: #5C6BC0;
+    --border-color: #E5E7EB;
+    --success-color: #16A34A;
+    --error-color: #DC2626;
+    --warning-color: #F59E0B;
 }
 
 .btn {
-    width: 70px;
+    width: fit-content;
     height: 30px;
     border: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
-    color: var(--text-color);
+    color: var(--text-primary-color);
     border-radius: 5px;
     cursor: pointer;
-    margin-left: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 12px;
 }
 
+.btn:not(:first-child) {
+    margin-left: 5px;
+}
+
+.btn:not(:last-child) {
+    margin-left: 5px;
+}
 .btn-primary {
     background-color: var(--primary-color);
     color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: 1px solid #10174F;
 }
 
 .btn-secondary {
     background-color: var(--secondary-color);
-    color: var(--text-color);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: white;
+    border: 1px solid #10174F;
+}
+
+.btn-gray {
+    background-color: var(--background-color);
+    border: 1px solid #ccc;
+    color: var(--text-primary-color)
 }
 
 .btn-primary:hover {
-    background-color: var(--hover-color);
     transform: scale(1.05);
 }
 
 .btn-secondary:hover {
-    background-color: white;
-    color: var(--text-color)
+    transform: scale(1.05);
+}
+
+.btn-gray:hover {
+    transform: scale(1.05);
+}
+
+.btn-text:not(:first-child) {
+    margin-left: 5px;
+}
+
+.btn-text:not(:last-child) {
+    margin-left: 5px;
 }
 
 .toobar {
@@ -46,20 +79,31 @@
     height: 50px;
     padding: 8px 5px 8px 5px;
     background-color: white;
-    color: var(--text-color)
+    color: var(--text-primary-color)
 }
 
 #add-lesson-btn {
     width: 80px;
 }
 
+.icon {
+    width: 15px;
+    height: 15px;
+}
+
 .input {
     height: 40px;
-    border: none;
-    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    background-color: var(--background-color);
     padding: 5px;
     border-radius: 5px;
+    margin-top: 10px;
 }
+
+.input-small {
+    height: 30px;
+}
+
 .card {
     width: 200px;
     height: 100px;
@@ -74,9 +118,9 @@
 }
 
 .card:hover {
-    background-color: #FAFAFA
-;
+    background-color: #FAFAFA;
 }
+
 .card a {
     font-size: 12px;
     cursor: pointer;
@@ -102,17 +146,27 @@
 .modal-wrapper {
     display: flex;
     flex-direction: column;
-    align-items: start;
-    justify-content: space-between;
+    /* align-items: start; */
+    /* justify-content: space-between; */
     width: 400px;
     height: 200px;
     padding: 15px 15px;
-    background: ghostwhite;
+    background-color: #f4f6f8;
     border-radius: 5px;
     position: fixed;
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.modal-header {
+    display: flex;
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .modal-body {
@@ -130,6 +184,7 @@
     align-items: center;
     width: 100%;
     height: 50px;
+    margin-top: auto;
 }
 
 .open-modal-btn-wrapper {
@@ -162,3 +217,9 @@ h1 {
     text-align: center;
 }
 
+
+/* flex containers */
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
