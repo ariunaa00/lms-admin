@@ -94,7 +94,7 @@ const mountLessons = async (_lessons) => {
         return `<div class="card lesson-card" data-id="${lesson.id}">
                 <image src="${imgLoadPredix}${lesson.imgUrl}" />
                 <span>${lesson.name}</span>
-                <a href="exams.html?lessonId=${lesson.id}"> Шалгалтын жагсаалт харах</a>
+                <button class="btn btn-gray" > <a href="exams.html?lessonId=${lesson.id}">Шалгалт харах</a></button>
           </div>`
     }).join("")
 

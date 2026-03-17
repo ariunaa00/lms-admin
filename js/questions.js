@@ -20,6 +20,7 @@ const questionTextInput = document.getElementById('question-text-input');
 const imgInput = document.getElementById('question-image-input');
 const audioInput = document.getElementById('question-audio-input');
 const videoInput = document.getElementById('question-video-input');
+const imgLoadPredix = 'https://examination-system-zangia-test.s3.us-east-1.amazonaws.com'
 
 let questionsG = []
 let answersG = []
@@ -55,9 +56,9 @@ const mountQuestions = async () => {
             <tr >
                 <td>${i + 1}</td>
                 <td><div data-id="${question.id}" class="question-table-link-col">${question.questionText}</div></td>
-                <td><a href="${question.imgUrl}">Зураг харах</a></td>
-                <td>${question.audioUrl}</td>
-                <td>${question.videoUrl}</td>
+                <td><a href="${imgLoadPredix}/${question.imgUrl}">${question.imgUrl ? 'Зураг харах' : 'Зураг байхгүй'}</a></td>
+                <td><a href="${imgLoadPredix}/${question.audioUrl}">${question.audioUrl ? 'Дуу харах' : 'Дуу байхгүй'}</a></td>
+                <td><a href="${imgLoadPredix}/${question.videoUrl}">${question.videoUrl ? 'Бичлэг харах' : 'Бичлэг байхгүй'}</a></td>
                 <td>${question.examAnswers.length}</td>
             </tr>
         `

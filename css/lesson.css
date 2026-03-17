@@ -55,6 +55,16 @@
     flex-direction: row;
 } 
 
+.lesson-card .btn {
+    text-underline-position: none;
+    margin: 0px;
+    margin-top: 10px;
+}
+
+.lesson-card span  {
+    margin-top: 10px;
+}
+
 #lesson-img-preview {
     width: 80px;
     height: 80px;
@@ -62,3 +72,5 @@
     margin-right: 10px;
     border-radius: 5px;
 }
+
+

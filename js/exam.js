@@ -5,9 +5,20 @@ let examsG = []
 
 const getExams = async (lessonId) => {
     try {
-        if(!lessonId){
-            return null
+        if (!lessonId) {
+            const res = await fetch(`http://44.222.255.219:3000/api/v1/exam`, {
+                method: 'GET',
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": `Bearer ${token}` // <-- Bearer token here
+                }
+            })
+
+            const exams = await res.json();
+            examsG = exams
+            return exams
         }
+        
         const res = await fetch(`http://44.222.255.219:3000/api/v1/lesson/${lessonId}/exams`, {
             method: 'GET',
             headers: {

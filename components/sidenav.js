@@ -3,13 +3,13 @@ class AppSideNav extends HTMLElement {
         this.innerHTML = `
 <div id="sidenav" class="sidenav">
     <div class="nav-menu-div">
-        <image class="icon" alt="lesson" src="assets/images/online-lesson.png"><a href="#">Хичээлүүд</a>
+        <image class="icon" alt="lesson" src="assets/images/online-lesson.png"><a href="index.html">Хичээлүүд</a>
     </div>
     <div class="nav-menu-div">
-        <image class="icon" alt="exam" src="assets/images/exam.png"><a href="#">Шалгалтууд</a>
+        <image class="icon" alt="exam" src="assets/images/exam.png"><a href="exams.html">Шалгалтууд</a>
     </div>
     <div class="nav-menu-div">
-        <image class="icon" alt="users" src="assets/images/friends.png"><a href="#">Хэрэглэгчид</a>
+        <image class="icon" alt="users" src="assets/images/friends.png"><a href="examResult.html">Шалгалтын дүн</a>
     </div>
 </div>
 `;
