@@ -12,7 +12,7 @@ const checkUser = () => {
         const expiresAt = payload.exp * 1000;
 
         if (Date.now() < expiresAt) {
-            window.location.replace('file:///C:/Users/Kaizen/Desktop/examination-system/examination-system-front/index.html')
+            window.location.replace('login.html')
         }
     }
 }
@@ -42,7 +42,7 @@ loginForm.addEventListener("submit", async function (event) {
     const data = await res.json();
     if (res.ok) {
         localStorage.setItem("token", data.token);
-        window.location.replace("file:///C:/Users/Kaizen/Desktop/examination-system/examination-system-front/index.html");
+        window.location.replace("index.html");
 
     } else {
         alert(data.message);
