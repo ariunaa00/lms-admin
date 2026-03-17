@@ -8,7 +8,7 @@ const token = localStorage.getItem("token");
 const getResult = async (examId) => {
     try {
         if (!examId) {
-            const res = await fetch(`http://44.222.255.219:3000/api/v1/result/allresult`, {
+            const res = await fetch(`http://44.222.255.219:3000/api/v1/exam/allresult`, {
                 method: 'GET',
                 headers: {
                     "Content-Type": "application/json",
