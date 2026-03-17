@@ -64,6 +64,7 @@ const mountQuestions = async () => {
     }).join("")
     addListenersToQuestionLink();
 }
+
 const openQuestionModal = (addDefaultAnswer) => {
     if (addDefaultAnswer) {
         addDefaultAnswerInput();
@@ -221,6 +222,8 @@ const deleteAnswerInputs = () => {
         d.remove();
     })
     answersG = []
+    answerAddBtn.disabled = false
+
 }
 
 const addDefaultAnswerInput = () => {

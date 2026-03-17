@@ -46,7 +46,6 @@ const saveLesson = async (event) => {
     const name = document.getElementById('lesson-name-input').value;
     const id = document.getElementById('lesson-id') ? document.getElementById('lesson-id').dataset.id : null
 
-    console.log(id);
     const file = imgInput.files[0];
 
     if (!file && !id) { //шинээр хичээл нэмэх үед
