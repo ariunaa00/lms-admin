@@ -1,4 +1,4 @@
-const loginPage= 'file:///C:/Users/Kaizen/Desktop/examination-system/examination-system-front/login.html'
+const loginPage= 'login.html'
 function parseJwt(token) {
     const base64Url = token.split('.')[1];
     const base64 = atob(base64Url);
