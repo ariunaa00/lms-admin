@@ -28,7 +28,7 @@ loginForm.addEventListener("submit", async function (event) {
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
 
-    const res = await fetch("http://localhost:3000/api/v1/auth/admin/login", {
+    const res = await fetch("http://44.222.255.219:3000/api/v1/auth/admin/login", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"

@@ -15,7 +15,7 @@ const checkAuth = async () => {
         if (Date.now() > expiresAt) {
             window.location.replace('/login.html')
         } else {
-            const res = await fetch(`http://localhost:3000/api/v1/users/${payload.userId}`, {
+            const res = await fetch(`http://44.222.255.219:3000/api/v1/users/${payload.userId}`, {
                 method: 'GET',
                 headers: {
                     "Content-Type": "application/json",

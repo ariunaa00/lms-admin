@@ -29,7 +29,7 @@ const getQuestions = async (examId) => {
         if (!examId) {
             return null
         }
-        const res = await fetch(`http://localhost:3000/api/v1/exam/${examId}/questions`, {
+        const res = await fetch(`http://44.222.255.219:3000/api/v1/exam/${examId}/questions`, {
             method: 'GET',
             headers: {
                 "Content-Type": "application/json",
@@ -195,7 +195,7 @@ const saveQuestion = async () => {
     if (video) {
         formData.append('video', video)
     }
-    await fetch(`http://localhost:3000/api/v1/exam/${examId}/question`, {
+    await fetch(`http://44.222.255.219:3000/api/v1/exam/${examId}/question`, {
         method: 'POST',
         body: formData,
         headers: {

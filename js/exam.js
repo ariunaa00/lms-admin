@@ -8,7 +8,7 @@ const getExams = async (lessonId) => {
         if(!lessonId){
             return null
         }
-        const res = await fetch(`http://localhost:3000/api/v1/lesson/${lessonId}/exams`, {
+        const res = await fetch(`http://44.222.255.219:3000/api/v1/lesson/${lessonId}/exams`, {
             method: 'GET',
             headers: {
                 "Content-Type": "application/json",
