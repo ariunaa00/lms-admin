@@ -8,26 +8,39 @@ const token = localStorage.getItem("token");
 const getResult = async (examId) => {
     try {
         if (!examId) {
-            return null
-        }
-        const res = await fetch(`http://localhost:3000/api/v1/exam/${examId}/result`, {
-            method: 'GET',
-            headers: {
-                "Content-Type": "application/json",
-                "Authorization": `Bearer ${token}` // <-- Bearer token here
-            }
-        })
+            const res = await fetch(`http://localhost:3000/api/v1/exam/allresult`, {
+                method: 'GET',
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": `Bearer ${token}` // <-- Bearer token here
+                }
+            })
 
-        const results = await res.json();
-        resultG = results
-        return results
+            const results = await res.json();
+            resultG = results
+            return results
+        } else {
+
+            const res = await fetch(`http://localhost:3000/api/v1/exam/${examId}/result`, {
+                method: 'GET',
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": `Bearer ${token}` // <-- Bearer token here
+                }
+            })
+
+            const results = await res.json();
+            resultG = results
+            return results
+        }
+
     } catch (err) {
         console.log(err);
         return []
     }
 }
 const mountResults = async () => {
-    
+
     const results = await getResult(examId);
     const container = document.getElementById('results-table-body');
 
